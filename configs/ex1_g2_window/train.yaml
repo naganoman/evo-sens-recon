@@ -1,0 +1,24 @@
+# Example 1 (2D, G = 2) on the domain x >= -1: training on t in [-2, t_e].
+data:
+  path: data/g2_x-1.npz
+  norm_scale: 0.10836482  # the scale of g2.npz, rounded as in the original runs
+  periodic_axes: []
+  sensor_margin: 0
+model:
+  n_freq: 8
+  feature_dim: 64
+  decoder_shapes: [[6, 12], [30, 60], [60, 120], [120, 240]]
+  decoder_channels: [128, 64, 32, 16]
+train:
+  n_s: 128
+  n_layouts_per_batch: 8
+  layout_seed: 0
+  train_window: [-2.0, 0.0]
+  train_stride: 1
+  n_folds: 5
+  val_fold: 1
+  epochs: 3000
+  batch_size: 16
+  learning_rate: 1.0e-4
+  lr_final_ratio: 1.0
+  seed: 0

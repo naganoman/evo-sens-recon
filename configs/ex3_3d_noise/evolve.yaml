@@ -1,0 +1,11 @@
+# Example 3 (3D, G = 2): evolution over t in (0, 0.5].
+evolve:
+  model_dir: out/ex3_3d_noise/train/val_fold1
+  evolve_window: [0.0, 0.5]
+  n_w: 64
+  walk_seed: 1000
+  lsmr_iters: 100
+  lambda_s: 0.0
+  sigma_s: 0.5
+  sigma_n: 0.0
+  noise_seed: 20000

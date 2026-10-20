@@ -1,0 +1,6 @@
+# Figures 10-12: the sensor noise over the five folds.
+train:
+  train.val_fold: [1, 2, 3, 4, 5]
+evolve:
+  - grid:
+      evolve.sigma_n: [0.0, 0.01, 0.02, 0.05, 0.1, 0.2]

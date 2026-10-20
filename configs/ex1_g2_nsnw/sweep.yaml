@@ -1,0 +1,11 @@
+# Figures 4, 5 and 9 (G = 2).
+train:
+  train.n_s: [32, 64, 128, 256, 512]
+  train.val_fold: [1, 2, 3, 4, 5]
+evolve:
+  - grid:
+      evolve.n_w: [0, 1, 2, 4, 8, 16, 32, 64]
+  - where: {train.n_s: 128, train.val_fold: 1}  # figure 9: the smoothness penalty
+    grid:
+      evolve.lambda_s: [1.0]
+      evolve.sigma_s: [0.1]

@@ -1,0 +1,24 @@
+# Example 3 (3D, G = 2): training on every fourth snapshot of t in [-1, -0.01].
+data:
+  path: data/g2_3d.npz
+  norm_scale: 0.838408
+  periodic_axes: [0]
+  sensor_margin: 2
+model:
+  n_freq: 8
+  feature_dim: 16
+  decoder_shapes: [[4, 10, 12], [8, 18, 23], [14, 33, 42], [27, 61, 80], [50, 112, 150]]
+  decoder_channels: [32, 32, 32, 16, 8]
+train:
+  n_s: 1024
+  n_layouts_per_batch: 8
+  layout_seed: 0
+  train_window: [-1.0, -0.01]
+  train_stride: 4
+  n_folds: 5
+  val_fold: 1
+  epochs: 1000
+  batch_size: 1
+  learning_rate: 1.0e-3
+  lr_final_ratio: 0.02
+  seed: 0

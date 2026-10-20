@@ -1,0 +1,25 @@
+[project]
+name = "evo-sens-recon"
+version = "0.1.0"
+description = "Flow reconstruction from moving sensors by evolving the parameters of a trained model"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jax[cuda12]==0.11.0",
+    "flax==0.12.8",
+    "optax==0.2.8",
+    "numpy==2.5.2",
+    "scipy==1.18.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+train = "evo_sens_recon.train:main"
+evolve = "evo_sens_recon.evolve:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/evo_sens_recon"]

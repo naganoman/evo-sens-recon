@@ -1,0 +1,11 @@
+# Example 1 (2D, G = 2): evolution over t in (0, 1].
+evolve:
+  model_dir: out/ex1_g2_nsnw/train/n_s128_val_fold1
+  evolve_window: [0.0, 1.0]
+  n_w: 64
+  walk_seed: 1000
+  lsmr_iters: 50
+  lambda_s: 0.0
+  sigma_s: 0.5
+  sigma_n: 0.0
+  noise_seed: 0

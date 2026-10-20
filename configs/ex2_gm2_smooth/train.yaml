@@ -1,0 +1,24 @@
+# Example 2 (2D, G = -2): training on t in [-2, 0].
+data:
+  path: data/gm2.npz
+  norm_scale: 0.11764917080456551  # 1 / p99 of |ω| outside the aerofoil over t <= 0
+  periodic_axes: []
+  sensor_margin: 0
+model:
+  n_freq: 8
+  feature_dim: 64
+  decoder_shapes: [[6, 12], [30, 60], [60, 120], [120, 240]]
+  decoder_channels: [128, 64, 32, 16]
+train:
+  n_s: 128
+  n_layouts_per_batch: 8
+  layout_seed: 0
+  train_window: [-2.0, 0.0]
+  train_stride: 1
+  n_folds: 5
+  val_fold: 1
+  epochs: 10000
+  batch_size: 16
+  learning_rate: 1.0e-4
+  lr_final_ratio: 1.0
+  seed: 0

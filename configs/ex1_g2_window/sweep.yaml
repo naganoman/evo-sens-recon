@@ -1,0 +1,12 @@
+# Figure 6: the end of the training window t_e.
+train:
+  train.train_window+evolve.evolve_window:
+    - [[-2.0, -1.6], [-1.6, 2.0]]
+    - [[-2.0, -0.8], [-0.8, 2.0]]
+    - [[-2.0, 0.0], [0.0, 2.0]]
+    - [[-2.0, 0.8], [0.8, 2.0]]
+  train.val_fold: [1, 2, 3, 4, 5]
+evolve:
+  - where: {train.val_fold: 1}
+    grid:
+      evolve.walk_seed: [1000, 2000, 3000]
